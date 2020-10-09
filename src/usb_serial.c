@@ -874,6 +874,10 @@ void usb_com_handler() {
         if (en) {
           UECFG0X = pgm_read_byte(cfg++);
           UECFG1X = pgm_read_byte(cfg++);
+        } else {
+          /* XXX: rahix: clear alloc to remove a potentially preexisting
+           * allocation for this endpoint. */
+          UECFG1X = 0;
         }
       }
       UERST = 0x1E;
