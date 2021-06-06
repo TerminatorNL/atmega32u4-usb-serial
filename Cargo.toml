@@ -9,7 +9,7 @@ default = ["rt"]
 rt = ["avr-device/rt"]
 
 [dependencies]
-avr-device = "0.2.2"
+avr-device = {version = "0.3", features=["atmega32u4"]}
 embedded-hal = "0.2.4"
 nb = "1.0.0"
 ufmt = "0.1.0"
@@ -19,7 +19,7 @@ cc = "1.0.60"
 
 [dev-dependencies]
 panic-halt = "0.2.0"
-arduino-leonardo = { git = "https://github.com/Rahix/avr-hal" }
+arduino-leonardo = {git = "https://github.com/rahix/avr-hal", rev = "885e8ec6d6d2fe34f26a1e2697a99f41092f0985"}
 
 [profile.dev]
 panic = "abort"
